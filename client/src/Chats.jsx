@@ -19,13 +19,28 @@ function Chats({ socket, username, room }) {
             setmessageList((list) => [...list, messageData]);
             setCurrentMessage("");
         }
-    }
+    };
 
     useEffect(() => {
-        socket.on("receive_message", (data) => {
-            setmessageList((list) => [...list,data]);
-        });
-    }, [socket]);
+      // Join the specified room
+      socket.emit("join_room", room);
+
+      // Handle receiving previous messages
+      socket.on("previous_messages", (messages) => {
+          setmessageList(messages); // Set the initial messages
+      });
+
+      // Handle receiving new messages
+      socket.on("receive_message", (data) => {
+          setmessageList((list) => [...list, data]);
+      });
+
+      // Cleanup listeners on unmount
+      return () => {
+          socket.off("previous_messages");
+          socket.off("receive_message");
+      };
+  }, [socket, room]);
 
   return (
     <div className='chat-window'>

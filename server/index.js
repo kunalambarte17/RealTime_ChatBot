@@ -15,14 +15,31 @@ const io = new Server(server, {
     }
 })
 
+// In-memory storage for messages (replace with database for production)
+const roomMessages = {};
+
 io.on("connection",(socket) => {
     console.log(`User connected: ${socket.id}`);
+
     socket.on("join_room", (data) => {
         socket.join(data);
-        console.log(`User with ID: ${socket.id} joined room: ${data}`);
-    })
+
+        // Send previous messages to the user
+        if (roomMessages[data]) {
+            socket.emit("previous_messages", roomMessages[data]);
+        } else {
+            roomMessages[data] = [];
+        }
+    });
 
     socket.on("send_message", (data) => {
+
+        if (!roomMessages[data.room]) {
+            roomMessages[data.room] = [];
+        }
+        roomMessages[data.room].push(data);
+
+        // Broadcast the message to other users in the room
         socket.to(data.room).emit("receive_message", data);
     });
     
