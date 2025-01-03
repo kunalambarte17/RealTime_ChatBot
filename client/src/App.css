@@ -8,6 +8,7 @@
     font-family: "Open Sans", sans-serif;
     display: grid;
     place-items: center;
+    background-color: #F3F4F6;
   }
   body {
     margin: 0%;
@@ -63,7 +64,7 @@
   .chat-window .chat-header {
     height: 45px;
     border-radius: 6px;
-    background: #263238;
+    background: #1E293B;
     position: relative;
     cursor: pointer;
   }
@@ -78,7 +79,7 @@
   .chat-window .chat-body {
     height: calc(450px - (45px + 70px));
     border: 1px solid #263238;
-    background: #fff;
+    background: #E2E8F0;
   
     position: relative;
   }
@@ -103,9 +104,9 @@
     height: auto;
     min-height: 40px;
     max-width: 120px;
-    background-color: #43a047;
+    background-color: #D1FAE5;
     border-radius: 5px;
-    color: white;
+    color: #065F46;
     display: flex;
     align-items: center;
     margin-right: 5px;
@@ -135,7 +136,8 @@
   
   #other .message-content {
     justify-content: flex-end;
-    background-color: cornflowerblue;
+    background-color: #b8d4f9;
+    color: #1E3A8A;
   }
   
   #other .message-meta {
@@ -166,8 +168,9 @@
     border: 0;
     padding: 0 0.7em;
     font-size: 1em;
+    color: #111827;
     border-right: 1px dotted #607d8b;
-  
+    background-color: #F1F5F9;
     outline: none;
     font-family: "Open Sans", sans-serif;
   }
@@ -181,8 +184,8 @@
     height: 100%;
     outline: none;
     font-size: 25px;
-    color: #43a047;
-    background-color: #fff;
+    color: #FFFFFF;
+    background-color: #22C55E;
   }
   
   .chat-window .chat-footer button:hover {
