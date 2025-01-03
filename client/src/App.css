@@ -51,8 +51,9 @@
   }
   
   .chat-window {
-    width: 300px;
-    height: 420px;
+    width: 90%;
+    height: 500px;
+    margin-top: 3rem;
   }
   
   .chat-window p {
@@ -64,6 +65,13 @@
     background: #263238;
     position: relative;
     cursor: pointer;
+  }
+  .send{
+    color: #43a047 !important;
+  }
+  .send:hover{
+    color: #2e7d32 !important;
+    background-color: #f6f6f6 !important;
   }
   .chat-window .chat-header p {
     display: block;

@@ -60,7 +60,7 @@ function Chats({ socket, username, room }) {
           }}  
          onKeyDown={(event) => {event.key === 'Enter' && sendMessage()}}
         />
-        <button onClick={sendMessage}>Send</button>
+        <button onClick={sendMessage} className='send'>Send</button>
       </div>
     </div>
   )
