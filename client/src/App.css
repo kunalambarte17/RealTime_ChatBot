@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+
 .App {
     width: 100vw;
     height: 100vh;
@@ -11,7 +13,6 @@
     margin: 0%;
     padding: 0%;
   }
-  @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
   
   .joinChatContainer {
     display: flex;
@@ -65,13 +66,6 @@
     background: #263238;
     position: relative;
     cursor: pointer;
-  }
-  .send{
-    color: #43a047 !important;
-  }
-  .send:hover{
-    color: #2e7d32 !important;
-    background-color: #f6f6f6 !important;
   }
   .chat-window .chat-header p {
     display: block;
@@ -185,14 +179,15 @@
     cursor: pointer;
     flex: 15%;
     height: 100%;
-    background: transparent;
     outline: none;
     font-size: 25px;
-    color: lightgray;
+    color: #43a047;
+    background-color: #fff;
   }
   
   .chat-window .chat-footer button:hover {
-    color: #43a047;
+    color: #2e7d32 ;
+    background-color: #f6f6f6 ;
   }
   .hide {
     opacity: 0 !important;
