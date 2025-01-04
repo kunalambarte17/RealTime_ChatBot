@@ -24,6 +24,7 @@ function App() {
       {!showChat ? (
       <div className="joinChatContainer">
       <h3>Join A Chat</h3>
+      <p>(Room ID: Room4321)</p>
       <input 
         type="text" 
         placeholder="Enter your name" 
