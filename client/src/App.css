@@ -70,7 +70,7 @@
   .chat-window {
     width: 90%;
     height: 500px;
-    margin-top: 3rem;
+    margin-top: -6rem;
     position: relative;
     display: flex;
     flex-direction: column;
