@@ -1,5 +1,6 @@
 import './App.css'
 import React,{useEffect, useState} from 'react'
+import ParticlesComponent from './components/ParticlesComponent';
 import ScrollToBottom from 'react-scroll-to-bottom';
 
 function Chats({ socket, username, room }) {
@@ -43,6 +44,8 @@ function Chats({ socket, username, room }) {
   }, [socket, room]);
 
   return (
+    <>
+    <ParticlesComponent id="particles" />
     <div className='chat-window'>
       <div className='chat-header'>
         <p>Live Chat</p>
@@ -76,9 +79,10 @@ function Chats({ socket, username, room }) {
           }}  
          onKeyDown={(event) => {event.key === 'Enter' && sendMessage()}}
         />
-        <button onClick={sendMessage} className='send'>Send</button>
+        <button onClick={sendMessage} className='send chat-footer-button'>Send</button>
       </div>
     </div>
+    </>
   )
 }
 
