@@ -3,7 +3,7 @@ import io from 'socket.io-client'
 import { useState } from 'react'
 import Chats from './Chats'
 
-const socket = io.connect("http://localhost:3000")
+const socket = io.connect("https://chat-app-server-taupe.vercel.app/")
 
 function App() {
 
