@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express')
 const app = express();
 const http = require("http")
@@ -10,7 +12,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors:{
-        origin:"http://localhost:5173",
+        origin: process.env.CORS_ORIGIN || "http://localhost:5173",
         methods:["GET", "POST"],
         credentials: true,
     }
@@ -25,7 +27,6 @@ io.on("connection",(socket) => {
     socket.on("join_room", (data) => {
         socket.join(data);
 
-        // Send previous messages to the user
         if (roomMessages[data]) {
             socket.emit("previous_messages", roomMessages[data]);
         } else {
@@ -40,7 +41,6 @@ io.on("connection",(socket) => {
         }
         roomMessages[data.room].push(data);
 
-        // Broadcast the message to other users in the room
         socket.to(data.room).emit("receive_message", data);
     });
     
@@ -49,6 +49,7 @@ io.on("connection",(socket) => {
     })
 })
 
-server.listen(3000, () => {
-    console.log("server running")
+const port = process.env.PORT || 3000;
+server.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 })
