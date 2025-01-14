@@ -34,7 +34,7 @@ const ParticlesComponent = (props) => {
             mode: "push",
           },
           onHover: {
-            enable: false,
+            enable:false,
             mode: 'grab',
           },
         },
@@ -73,7 +73,7 @@ const ParticlesComponent = (props) => {
           density: {
             enable: true,
           },
-          value: 400,
+          value: 500,
         },
         opacity: {
           value: 1.0,

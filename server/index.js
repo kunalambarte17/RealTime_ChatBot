@@ -12,7 +12,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors:{
-        origin: process.env.CORS_ORIGIN || "realtimechatapp-seven.vercel.app",
+        origin: process.env.CORS_ORIGIN || "http://localhost:5173",
         methods:["GET", "POST"],
         credentials: true,
     }
@@ -51,5 +51,5 @@ io.on("connection",(socket) => {
 
 const port = process.env.PORT || 3000;
 server.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log("Server is Ruuning on Port 3000")
 })
